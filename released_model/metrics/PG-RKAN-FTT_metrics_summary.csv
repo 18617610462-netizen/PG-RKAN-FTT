@@ -1,0 +1,2 @@
+﻿Model,Physics loss version,Prediction file,Test R2,Test RMSE,Test MAE,Test Accuracy,Test Macro Precision,Test Macro Recall,Test Macro-F1,DS4 Recall,DS5 Recall
+PI-RBFKAN-FT-Transformer,Section 2.2 intensity trend + MIDR threshold-neighborhood weighting + period-spectrum matching weighting,测试集预测结果.xlsx,0.886255678430766,0.0015880733605961519,0.0006073897027849266,0.8282732447817837,0.7771106359611104,0.7771624907533287,0.7771124840472277,0.7459016393442623,0.782258064516129

@@ -1,0 +1,6 @@
+structure_type,pred_MIDR,pred_damage_state
+frame,0.0032,DS2
+shear_wall,0.0014,DS2
+frame_shear_wall,0.0048,DS3
+masonry,0.0012,DS3
+

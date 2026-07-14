@@ -1,0 +1,63 @@
+seed: 2026
+data:
+  train_csv: data/train.csv
+  val_csv: data/val.csv
+  test_csv: data/test.csv
+  target_col: MIDR
+  structure_col: structure_type
+  categorical_cols:
+    - structure_type
+  continuous_cols:
+    - Vs30
+    - basement_stories
+    - num_stories
+    - T1
+    - total_height
+    - ground_floor_height
+    - typical_floor_height
+    - transverse_length
+    - longitudinal_length
+    - PGA
+    - PGV
+    - PGD
+    - PGV_PGA
+    - Ia
+    - CAA
+    - TBD_D5_95
+    - ASI
+    - HI
+    - ERA
+    - Sa
+model:
+  name: PG-RKAN-FTT
+  d_token: 24
+  n_blocks: 2
+  n_heads: 4
+  basis_size: 8
+  hidden_multiplier: 1.5
+  attention_dropout: 0.05
+  residual_dropout: 0.10
+  ffn_dropout: 0.10
+training:
+  batch_size: 128
+  epochs: 80
+  lr: 0.0008
+  weight_decay: 0.0002
+  target_transform: log1p_1000
+physics:
+  enabled: true
+  alpha_tg: 6.283185307
+  resonance_bandwidth: 0.50
+  resonance_sample_weight: 0.50
+  threshold_sample_weight: 1.00
+  threshold_distance_scale: 0.35
+  intensity_trend_weight: 0.02
+  classification_weight: 0.20
+  ordinal_temperature: 0.12
+  intensity_pair_margin: 0.01
+  similarity_radius: 2.50
+damage_thresholds:
+  frame: [0.0018181818, 0.0040000000, 0.0100000000, 0.0200000000]
+  shear_wall: [0.0010000000, 0.0020000000, 0.0040000000, 0.0083333333]
+  frame_shear_wall: [0.0012500000, 0.0025000000, 0.0050000000, 0.0100000000]
+  masonry: [0.0004000000, 0.0010000000, 0.0020000000, 0.0066666667]
